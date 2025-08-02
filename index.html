@@ -4,36 +4,35 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>AC4 - Repuestos Hidráulicos y Soluciones en Quito, Ecuador</title>
-  <meta name="description" content="Empresa especializada en cilindros hidráulicos, bombas, aceros AISI, pintura electrostática y recarga de extintores. 
+  <meta name="description" content="Empresa especializada en cilindros hidráulicos, bombas, repuestos, aceros AISI, pintura electrostática y recarga de extintores. Desde 2009 en Quito.">
   <style>
     * {
       margin: 0;
       padding: 0;
       box-sizing: border-box;
     }
-    
+
     body {
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background: linear-gradient(135deg, #1a2a6c, #b21f1f, #1a2a6c);
-      background-size: 400% 400%;
-      animation: gradient 15s ease infinite;
-      color: white;
+      background: #f5f5f5;
+      color: #333;
       line-height: 1.7;
       min-height: 100vh;
       display: flex;
     }
-    
-    @keyframes gradient {
-      0% { background-position: 0% 50%; }
-      50% { background-position: 100% 50%; }
-      100% { background-position: 0% 50%; }
+
+    /* Colores de marca */
+    :root {
+      --azul: #0A2463;
+      --rojo: #D91B1B;
+      --blanco: #FFFFFF;
+      --gris: #f5f5f5;
     }
 
-    /*Menú lateral fijo*/
+    /* Menú lateral */
     .sidebar {
       width: 220px;
-      bacground: rgba(0, 0, 0, 0.5);
-      backdrop-filter: blur(10px);
+      background: var(--azul);
       height: 100vh;
       position: fixed;
       top: 0;
@@ -43,17 +42,18 @@
       flex-direction: column;
       align-items: flex-start;
       z-index: 100;
-      border-right: 1px solid rgba(255, 255, 255, 0.1);
+      border-right: 1px solid rgba(255,255,255,0.1);
     }
 
-    .sidebar h2{
-      color: #00x853;
+    .sidebar h2 {
+      color: var(--rojo);
       margin-bottom: 30px;
-    font-size: 1.4em;
+      font-size: 1.5em;
+      font-weight: bold;
     }
 
     .sidebar a {
-      color: white;
+      color: var(--blanco);
       text-decoration: none;
       font-size: 1.1em;
       margin: 15px 0;
@@ -61,7 +61,7 @@
     }
 
     .sidebar a:hover {
-      color: #00c853;
+      color: var(--rojo);
     }
 
     /* Contenido principal */
@@ -69,76 +69,132 @@
       margin-left: 220px;
       padding: 60px 20px;
       width: calc(100% - 220px);
+      background: var(--gris);
     }
-    
+
     header {
       text-align: center;
       padding: 40px 0;
     }
-    
+
     header h1 {
       font-size: 2.8em;
       margin-bottom: 10px;
-      text-shadow: 2px 2px 8px rgba(0,0,0,0.5);
+      color: var(--azul);
     }
-    
+
     header p {
       font-size: 1.2em;
-      opacity: 0.9;
+      opacity: 0.8;
     }
-    
+
     .section {
-      background: rgba(255, 255, 255, 0.1);
-      backdrop-filter: blur(10px);
+      background: var(--blanco);
       border-radius: 15px;
       padding: 30px;
       margin: 30px 0;
-      box-shadow: 0 8px 32px rgba(0,0,0,0.2);
+      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
     }
-    
+
     .section h2 {
       text-align: center;
       margin-bottom: 20px;
       font-size: 1.8em;
-      color: #00c853;
-      border-bottom: 2px solid #00c853;
+      color: var(--azul);
+      border-bottom: 3px solid var(--rojo);
       padding-bottom: 10px;
     }
-    
+
     ul {
       text-align: left;
       padding-left: 20px;
       font-size: 1.1em;
     }
-    
+
     ul li {
       margin: 10px 0;
     }
-    
-    .contact {
-      text-align: center;
-      font-size: 1.2em;
+
+    /* Formulario */
+    .contact-form {
+      max-width: 600px;
+      margin: 0 auto;
+      background: #fff;
+      padding: 25px;
+      border-radius: 10px;
+      box-shadow: 0 3px 10px rgba(0,0,0,0.1);
     }
-    
+
+    .contact-form input,
+    .contact-form textarea,
+    .contact-form button {
+      width: 100%;
+      margin: 10px 0;
+      padding: 12px;
+      border: 1px solid #ddd;
+      border-radius: 6px;
+      font-size: 1em;
+    }
+
+    .contact-form button {
+      background: var(--rojo);
+      color: white;
+      border: none;
+      cursor: pointer;
+      font-weight: bold;
+      transition: background 0.3s;
+    }
+
+    .contact-form button:hover {
+      background: #c00;
+    }
+
+    /* Botón WhatsApp flotante */
+    .whatsapp-float {
+      position: fixed;
+      bottom: 30px;
+      right: 30px;
+      background: #25D366;
+      color: white;
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 30px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+      z-index: 99;
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+
+    .whatsapp-float:hover {
+      transform: scale(1.1);
+      box-shadow: 0 6px 15px rgba(0,0,0,0.4);
+    }
+
+    .whatsapp-float a {
+      color: white;
+      text-decoration: none;
+    }
+
+    /* Footer */
     .footer {
       text-align: center;
       margin-top: 50px;
       font-size: 0.9em;
-      opacity: 0.8;
+      color: #666;
     }
 
-    /* Resposive para pantallas pequeñas */
-    @media(max-width: 768px) {
-      .sidebar{
+    /* Responsive */
+    @media (max-width: 768px) {
+      .sidebar {
         width: 70px;
         padding: 40px 10px;
       }
-      .sidebar h2{
+      .sidebar h2 {
         font-size: 1em;
         visibility: hidden;
-      }
-      .sidebar a {
-        font-size: 1em;
       }
       .sidebar a span {
         display: none;
@@ -147,25 +203,30 @@
         margin-left: 70px;
         padding: 40px 15px;
       }
-      header h1 {
-        font-size: 2.2em;
-      }
     }
 
-   @media (max-width: 480px) {
+    @media (max-width: 480px) {
       body {
         flex-direction: column;
       }
       .sidebar {
         width: 100%;
-        heigth: auto;
+        height: auto;
         flex-direction: row;
         justify-content: center;
         padding: 15px;
+        position: relative;
       }
       .main-content {
-        margin.left: 0;
+        margin-left: 0;
         width: 100%;
+      }
+      .whatsapp-float {
+        bottom: 20px;
+        right: 20px;
+        width: 50px;
+        height: 50px;
+        font-size: 24px;
       }
     }
   </style>
@@ -173,17 +234,18 @@
 <body>
 
   <!-- Menú Lateral -->
-<div class="sidebar">
+  <div class="sidebar">
     <h2>AC4</h2>
     <a href="#inicio"><span>Inicio</span></a>
     <a href="#sobre-mi"><span>Sobre mí</span></a>
     <a href="#servicios"><span>Servicios</span></a>
     <a href="#productos"><span>Productos</span></a>
     <a href="#contacto"><span>Contacto</span></a>
-</div>
-  
-<!-- Contenido Principal -->
+  </div>
+
+  <!-- Contenido Principal -->
   <div class="main-content">
+
     <header id="inicio">
       <h1>AC4</h1>
       <p>Soluciones Hidráulicas y Metalmecánicas – Desde 2009 en Quito, Ecuador</p>
@@ -194,47 +256,23 @@
       <p>Hola, soy <strong>Jorge Alberto Culqui Romero</strong>, técnico con más de 15 años de experiencia en el sector hidráulico y metalmecánico. Desde 2009 he trabajado en el diseño, fabricación, reparación y mantenimiento de sistemas hidráulicos, y desde hace 3 años lidero mi empresa <strong>AC4</strong>, especializada en ofrecer soluciones completas para maquinaria pesada y sistemas industriales.</p>
     </div>
 
-    <div class="section">
-      <h2>Soluciones</h2>
-      <ul>
-        <li><strong>Rápidas</strong></li>
-        <li><strong>Innovadoras</strong></li>
-        <li>Personalizadas para satisfacer las necesidades de <strong>Nuestros Clientes</strong></li>
-        <li><strong>En la Industria, Caminero, Agricola</li>
-        <li><strong>Cilindros Hidráulicos</strong> Mecanizado de piezas</li>
-      </ul>
-    </div>
-
-    
     <div id="servicios" class="section">
       <h2>Servicios</h2>
       <ul>
         <li>Fabricación, diseño, reparación y mantenimiento de <strong>cilindros hidráulicos</strong></li>
         <li>Reparación y mantenimiento de <strong>bombas hidráulicas</strong></li>
         <li>Ensamblaje y mantenimiento de <strong>bancos de válvulas</strong></li>
-        <li>Montaje, pruebas, calibración en Situ</li> 
         <li>Fabricación de <strong>piezas de precisión</strong> a medida</li>
         <li><strong>Pintura electrostática</strong> para mayor durabilidad</li>
       </ul>
     </div>
 
     <div id="productos" class="section">
-      <h2>Productos</h2>
+      <h2>Productos y Repuestos</h2>
       <ul>
         <li>Kit de sellos hidráulicos</li>
-        <li>Barras (ejes, vástagos), SAE 4140, templadas y revenidas por inducción con recublimiento de cromo duro</li>
-        <li>Tubos microbruñidos ST52 para ensamblar y reparar cilindros hidráulicos</li>
-        <li>Mandos manuales 1, 2, 3, 4, 5, etc, palancas</li>
-        <li>Filtros de retorno, base para filtro</li>
-        <li>Electroválvulas 24V, 110v, 22ov, 400v y válvulas direccionales cetop 3, 5, 7, 10</li>
-        <li>Manómetros de glicerina de 1000, 3000, 5000, 10000 PSI</li>
-        <li>Válvulas de paso desde 1/8" hasta 3"</li>
-        <li>Válvula de cartucho</li>
-        <li>Bombas hidráulicas de engranajes, paletas, pistón de caudal fijo y cauldal variable</li>
-        <li>Motores hidráulicos de torque, velocidad</li>
-        <li>Manifould de 1, 2, 3, 4, 5, 6, servicios</li>
-        <li>Mirillas, visores de nivel con o sin termómetro de 3" y de 5"</li>
-        <li>Válvula reguladora de caudal con o sin válvula check</li>
+        <li>Electroválvulas y mandos manuales</li>
+        <li>Manómetros, filtros de succión y retorno</li>
         <li>Vástagos cromados y tubería bruñida</li>
         <li>Venta de aceros AISI: 1018, 1045, 4140, 4340</li>
         <li>Tratamientos térmicos (temple y revenido)</li>
@@ -243,18 +281,43 @@
       <p style="text-align:center; margin-top:15px;">✅ Todo lo que necesitas para un sistema hidráulico completo.</p>
     </div>
 
-    <div id="contacto" class="section contact">
+    <div id="contacto" class="section">
       <h2>Contacto</h2>
-      <p>📍 <strong>Quito - Ecuador</strong></p>
-      <p>📧 <a href="mailto:ac4seal@outlook.es" style="color:#00c853; text-decoration:underline;">ac4seal@outlook.es</a></p>
-      <p>📱 <a href="https://wa.me/593986526803" style="color:#00c853; text-decoration:underline;" target="_blank">Escríbenos por WhatsApp</a></p>
+
+      <!-- Formulario de contacto -->
+      <div class="contact-form">
+        <form action="https://formspree.io/f/xqkgrwzd" method="POST">
+          <input type="text" name="name" placeholder="Tu nombre" required>
+          <input type="email" name="email" placeholder="Tu correo" required>
+          <input type="text" name="subject" placeholder="Asunto">
+          <textarea name="message" rows="5" placeholder="Tu mensaje" required></textarea>
+          <button type="submit">Enviar Mensaje</button>
+        </form>
+      </div>
+
+      <p style="text-align:center; margin-top:20px;">
+        📧 <a href="mailto:ac4hidraulica@gmail.com" style="color:var(--azul);">ac4hidraulica@gmail.com</a><br>
+        📍 Quito - Ecuador
+      </p>
     </div>
 
     <div class="footer">
       <p>&copy; 2025 AC4 - Todos los derechos reservados</p>
-      <p>Operando como AC4 desde 2022</p>
+      <p>Empresa fundada en 2009 | Operando como AC4 desde 2022</p>
     </div>
+
   </div>
+
+  <!-- Botón flotante de WhatsApp -->
+  <div class="whatsapp-float">
+    <a href="https://wa.me/593987654321" target="_blank" title="Escríbenos por WhatsApp">
+      <ion-icon name="logo-whatsapp"></ion-icon>
+    </a>
+  </div>
+
+  <!-- Scripts -->
+  <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
 
 </body>
 </html>
