@@ -2,14 +2,16 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8" />
-  <meta name="descrption" content="Empresa especializada en cilindros hidráulicos, bombas, repuestos, aceros AISI, pintura electrostática y recarga de extintores, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>AC4 - Repuestos Hidráulicos y Soluciones en Quito, Ecuador</title>
+  <meta name="description" content="Empresa especializada en cilindros hidráulicos, bombas, aceros AISI, pintura electrostática y recarga de extintores. 
   <style>
     * {
       margin: 0;
       padding: 0;
       box-sizing: border-box;
     }
+    
     body {
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
       background: linear-gradient(135deg, #1a2a6c, #b21f1f, #1a2a6c);
@@ -18,84 +20,178 @@
       color: white;
       line-height: 1.7;
       min-height: 100vh;
+      display: flex;
     }
+    
     @keyframes gradient {
       0% { background-position: 0% 50%; }
       50% { background-position: 100% 50%; }
       100% { background-position: 0% 50%; }
     }
-    .container {
-      max-width: 1000px;
-      margin: 0 auto;
+
+    /*Menú lateral fijo*/
+    .sidebar {
+      width: 220px;
+      bacground: rgba(0, 0, 0, 0.5);
+      backdrop-filter: blur(10px);
+      height: 100vh;
+      position: fixed;
+      top: 0;
+      left: 0;
       padding: 40px 20px;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      z-index: 100;
+      border-right: 1px solid rgba(255, 255, 255, 0.1);
     }
+
+    .sidebar h2{
+      color: #00x853;
+      margin-bottom: 30px;
+    font-size: 1.4em;
+    }
+
+    .sidebar a {
+      color: white;
+      text-decoration: none;
+      font-size: 1.1em;
+      margin: 15px 0;
+      transition: color 0.3s;
+    }
+
+    .sidebar a:hover {
+      color: #00c853;
+    }
+
+    /* Contenido principal */
+    .main-content {
+      margin-left: 220px;
+      padding: 60px 20px;
+      width: calc(100% - 220px);
+    }
+    
     header {
       text-align: center;
       padding: 40px 0;
     }
+    
     header h1 {
       font-size: 2.8em;
       margin-bottom: 10px;
       text-shadow: 2px 2px 8px rgba(0,0,0,0.5);
     }
+    
     header p {
       font-size: 1.2em;
       opacity: 0.9;
-      max-width: 700px;
-      margin: 0 auto;
     }
+    
     .section {
       background: rgba(255, 255, 255, 0.1);
       backdrop-filter: blur(10px);
       border-radius: 15px;
-      padding: 25px;
+      padding: 30px;
       margin: 30px 0;
       box-shadow: 0 8px 32px rgba(0,0,0,0.2);
     }
+    
     .section h2 {
       text-align: center;
       margin-bottom: 20px;
       font-size: 1.8em;
-      color: #fff;
+      color: #00c853;
       border-bottom: 2px solid #00c853;
       padding-bottom: 10px;
     }
+    
     ul {
       text-align: left;
       padding-left: 20px;
       font-size: 1.1em;
     }
+    
     ul li {
       margin: 10px 0;
     }
+    
     .contact {
       text-align: center;
       font-size: 1.2em;
-      margin-top: 20px;
     }
+    
     .footer {
       text-align: center;
       margin-top: 50px;
       font-size: 0.9em;
       opacity: 0.8;
     }
-    .highlight {
-      color: #00c853;
-      font-weight: bold;
+
+    /* Resposive para pantallas pequeñas */
+    @media(max-width: 768px) {
+      .sidebar{
+        width: 70px;
+        padding: 40px 10px;
+      }
+      .sidebar h2{
+        font-size: 1em;
+        visibility: hidden;
+      }
+      .sidebar a {
+        font-size: 1em;
+      }
+      .sidebar a span {
+        display: none;
+      }
+      .main-content {
+        margin-left: 70px;
+        padding: 40px 15px;
+      }
+      header h1 {
+        font-size: 2.2em;
+      }
+    }
+
+   @media (max-width: 480px) {
+      body {
+        flex-direction: column;
+      }
+      .sidebar {
+        width: 100%;
+        heigth: auto;
+        flex-direction: row;
+        justify-content: center;
+        padding: 15px;
+      }
+      .main-content {
+        margin.left: 0;
+        width: 100%;
+      }
     }
   </style>
 </head>
 <body>
 
-  <div class="container">
-    <header>
+  <!-- Menú Lateral -->
+<div class="sidebar">
+    <h2>AC4</h2>
+    <a href="#inicio"><span>Inicio</span></a>
+    <a href="#sobre-mi"><span>Sobre mí</span></a>
+    <a href="#servicios"><span>Servicios</span></a>
+    <a href="#productos"><span>Productos</span></a>
+    <a href="#contacto"><span>Contacto</span></a>
+</div>
+  
+<!-- Contenido Principal -->
+  <div class="main-content">
+    <header id="inicio">
       <h1>AC4</h1>
       <p>Soluciones Hidráulicas y Metalmecánicas – Desde 2009 en Quito, Ecuador</p>
     </header>
 
-    <div class="section">
+    <div id="sobre-mi" class="section">
       <h2>Sobre mí</h2>
-      <p>Hola, soy <span class="highlight">Jorge Alberto Culqui Romero</span>, técnico con más de 15 años de experiencia en el sector hidráulico y metalmecánico. Desde 2009 he trabajado en el diseño, fabricación, reparación y mantenimiento de sistemas hidráulicos, y desde hace 3 años lidero mi empresa <span class="highlight">AC4</span>, especializada en ofrecer soluciones completas para maquinaria pesada y sistemas industriales.</p>
+      <p>Hola, soy <strong>Jorge Alberto Culqui Romero</strong>, técnico con más de 15 años de experiencia en el sector hidráulico y metalmecánico. Desde 2009 he trabajado en el diseño, fabricación, reparación y mantenimiento de sistemas hidráulicos, y desde hace 3 años lidero mi empresa <strong>AC4</strong>, especializada en ofrecer soluciones completas para maquinaria pesada y sistemas industriales.</p>
     </div>
 
     <div class="section">
@@ -110,7 +206,7 @@
     </div>
 
     
-    <div class="section">
+    <div id="servicios" class="section">
       <h2>Servicios</h2>
       <ul>
         <li>Fabricación, diseño, reparación y mantenimiento de <strong>cilindros hidráulicos</strong></li>
@@ -122,7 +218,7 @@
       </ul>
     </div>
 
-    <div class="section">
+    <div id="productos" class="section">
       <h2>Productos</h2>
       <ul>
         <li>Kit de sellos hidráulicos</li>
@@ -147,11 +243,11 @@
       <p style="text-align:center; margin-top:15px;">✅ Todo lo que necesitas para un sistema hidráulico completo.</p>
     </div>
 
-    <div class="section contact">
+    <div id="contacto" class="section contact">
       <h2>Contacto</h2>
       <p>📍 <strong>Quito - Ecuador</strong></p>
       <p>📧 <a href="mailto:ac4seal@outlook.es" style="color:#00c853; text-decoration:underline;">ac4seal@outlook.es</a></p>
-      <p>📱 ¿WhatsApp? <a href="https://wa.me/593986526803" style="color:#00c853; text-decoration:underline;" target="_blank">Escríbenos aquí</a></p>
+      <p>📱 <a href="https://wa.me/593986526803" style="color:#00c853; text-decoration:underline;" target="_blank">Escríbenos por WhatsApp</a></p>
     </div>
 
     <div class="footer">
