@@ -64,11 +64,12 @@
       color: white;
       text-decoration: none;
       font-size: 1.1em;
-      transition: color 0.3s;
+      transition: color 0.3s ease, transform 0.2s sease;
     }
 
-    .sidebar nav ul li a:hover{
+    .sidebar nav ul li a:hover {
       color: #D91B1B; /* rojo de logo*/
+      transform: translateX(5px); /* Se mueve ligeramente a la derecha */
     }
     /* Estilos para la galeria*/
     .gallery-grid{
@@ -83,9 +84,15 @@
       max-width: 300px;
       border.radius: 12px;
       overflow: hidden;
-      box-sahdow: 0 6px 15px rgba(0,0,0,0.15);
-      transition: transform 0.3s;
+      box-sahdow: 0 6px 15px rgba(0,0,0,0.1);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
     }
+
+    .gallery-item:hover {
+      transform: scale(1.05); /* Agranda un 5% */
+      box-shadow: 0 12px 20px rgba(0,0,0,0.2); /*Sombra más fuerte */
+    }
+      
 
     .gallery-item img {
       width: 100%;
@@ -193,16 +200,20 @@
     }
 
     .contact-form button {
-      background: var(--rojo);
+      background: #D91B1B; /* rojo*/
       color: white;
       border: none;
+      padding: 12px;
+      width: 100%;
+      border-radius: 6px;
       cursor: pointer;
       font-weight: bold;
-      transition: background 0.3s;
+      transition: background 0.3s ease, transform 0.2s ease;
     }
 
     .contact-form button:hover {
-      background: #c00;
+      background: #0A2463; /* Azul oscuro */
+      transform: traslateY(-2px); /* Sube ligeramente */
     }
 
     /* Botón WhatsApp flotante */
@@ -278,11 +289,26 @@
         width: 100%;
       }
       .whatsapp-float {
-        bottom: 20px;
-        right: 20px;
-        width: 50px;
-        height: 50px;
-        font-size: 24px;
+        position: fixed;
+        bottom: 30px;
+        right: 30px;
+        background: #25D366;
+        color: white;
+        width: 60px;
+        height: 60px;
+        border-radius: 50%;
+        display: flex;
+        aling-items: center;
+        justify-content: center;
+        font-size: 30px;
+        box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+        z-index: 99;
+        transition: all 0.3s ease;
+      }
+
+      .whatsapp-float:hover {
+        transform: scale(1.15) rotate(10deg); /* Se agranda y gira ligeramente */
+        bix-shadow: 0 8px 20px rgba(0,0,0,0.5);
       }
     }
   </style>
