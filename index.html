@@ -290,7 +290,7 @@
 <body>
 
   <!-- Botón hamburguesa (solo en móvil) -->
-  <div id="menu-toggle" clas="hamburguer">
+  <div id="menu-toggle" clas="hamburger">
     <span></span>
     <span></span>
     <span></span>
@@ -432,9 +432,11 @@
     const menuToggle = document.getElementById('menu-toggle');
     const sidebar = document.querySelector('.sidebar');
 
-    menuToggle.addEventListener('click', () => {
-     sidebar.classList.toggle('active');
-    });
+    if (menuToggle && sidebar) {
+      menuToggle.addEventListener('click', () => {
+         sidebar.classList.toggle('active');
+      });
+    }  
   </script>
 
 </body>
