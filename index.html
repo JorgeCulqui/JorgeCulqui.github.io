@@ -43,12 +43,11 @@
       align-items: center;
       z-index: 100;
       border-ringht: 1px solid rgba(255,255,255,0.1);
-      trsnsition: left 0.3s ease;
     }
 
     .sidebar .logo-container {
-      text-align: center;
       margin-bottom: 30px;
+      text-align: center;
     }
 
     .sidebar .logo-container img {
@@ -80,7 +79,7 @@
     }
 
     .sidebar nav ul li a:hover {
-      color: #D91B1B; /* rojo de logo*/
+      color: var(--rojo); /* rojo de logo*/
       background: rgba(255,255,255,0.1);
     }
     
@@ -104,7 +103,7 @@
       heigth: 3px;
       background: var(--azul);
       border-radius: 3px;
-      transition: all 0.3s ease;
+      transition: all 0.3s;
     }
 
     /* Contenido principal */
@@ -217,7 +216,7 @@
     }
 
     .contact-form button {
-      background: #D91B1B; /* rojo*/
+      background: var(--rojo); /* rojo*/
       color: white;
       border: none;
       cursor: pointer;
@@ -226,8 +225,7 @@
     }
 
     .contact-form button:hover {
-      background: #0A2463; /* Azul oscuro */
-      transform: traslateY(-2px); /* Sube ligeramente */
+      background: #c00; /* Azul oscuro */
     }
 
     /* Botón WhatsApp flotante */
@@ -251,7 +249,6 @@
 
     .whatsapp-float:hover {
       transform: scale(1.1);
-      box-shadow: 0 6px 15px rgba(0,0,0,0.4);
     }
 
     .whatsapp-float a {
@@ -274,8 +271,8 @@
       }
 
       .sidebar {
-        transform: translateX(-100);
-        z.index: 100;
+        transform: translateX(-100%);
+        transition: transform 0.3s ease;
       }
 
       .sidebar.active {
@@ -373,14 +370,18 @@
 
       <!--Imágenes de la galería-->
       <div class="gallery-grid">
+        /* -- foto 1--*/
         <div class="gallery-item">
           <a href="https://postimages.org/" target="_blank"><img src="https://i.postimg.cc/SsQFyMKG/Captura-desde-2024-06-19-20-00-04.png"></a><br/><br/>
           <li>Mantenimiento de Banco de Válvulas.</li>
         </div>
+
+        /* -- Foto 2 --*/
         <div class="gallery-item">  
           <a href='https://postimages.org/' target='_blank'><img src='https://i.postimg.cc/QCtbmp8V/Captura-desde-2024-02-24-08-57-21.png'></a>
           <li>Mantenimienro de Bomba de Paletas.</li>
         </div>
+        /*-- Foto 3 --*/
         <div class="gallery-item">  
           <a href='https://postimg.cc/cvXR7jw6' target='_blank'><img src='https://i.postimg.cc/MG89wJG0/IMG-20241123-174156-094.jpg'></a>
           <li>Recarga de Extintores.</li>
@@ -432,9 +433,11 @@
     const menuToggle = document.getElementById('menu-toggle');
     const sidebar = document.querySelector('.sidebar');
 
-    menuToggle.addEventListener('click', () => {
-      sidebar.classList.toggle('active');
-    });
+    if (menuToggle && sidebar) {
+      menuToggle.addEventListener('click', () => {
+        sidebar.classList.toggle('active');
+      });
+    }
   </script>
 
 </body>
