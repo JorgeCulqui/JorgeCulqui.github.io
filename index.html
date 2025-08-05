@@ -3,7 +3,7 @@
 <head>  
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>AC4 - Repuestos Hidráulicos y Soluciones</title>
+  <title>AC4 - Soluciones Hidráulicas y Metalmecánicas</title>
   <meta name="description" content="Empresa especializada en cilindros hidráulicos, bombas, repuestos, aceros AISI, pintura electrostática y recarga de extintores. Desde 2009 en Quito.">
   <style>
     * {
@@ -36,7 +36,7 @@
       height: 100vh;
       position: fixed;
       top: 0;
-      left: -220px;
+      left: 0;
       padding: 40px 20px;
       display: flex;
       flex-direction: column;
@@ -44,6 +44,7 @@
       z-index: 100;
       border-ringht: 1px solid rgba(255,255,255,0.1);
     }
+    
     .sidebar .logo-container {
       margin-bottom: 30px;
       text-align: center;
@@ -73,7 +74,7 @@
       display: block;
       text-align: center;
       padding: 8px 0;
-      transition: color 0.3s ease, background 0.3s;
+      transition: color 0.3s, background 0.3s;
       border-radius: 6px;
     }
 
@@ -105,14 +106,36 @@
       transition: all 0.3s;
     }
 
-    /* Contenido principal */
+    /* Mostrar botón hamburguesa en pantallas pequeñas */
+    @media (max-width: 768px){
+      .hamburger {
+        display: flex: /*Visible en pantallas pequeñas */
+      }
+
+      .sidebar {
+        transform: translateX(-100%); /* Oculto*/
+        transition: transform 0.3s ease;
+      }
+
+      .sidebar.active {
+        transform: translateX(0); /* muestra menu */
+      }
+      
+    .main-content {
+      margin-left: 0;
+      padding: 80px 15px 100px;
+      width: 100%;
+    }
+  }
+
+  /* Contenido principal */
     .main-content {
       margin-left: 220px;
       padding: 60px 20px;
       width: calc(100% - 220px);
       background: var(--gris);
     }
-
+    
     header {
       text-align: center;
       padding: 40px 0;
